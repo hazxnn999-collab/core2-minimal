@@ -28,10 +28,12 @@ jobs:
           gradle-version: '4.6'
 
       - name: Compilar APK Debug
+        working-directory: ./CORE2_MINIMAL
         run: gradle assembleDebug
 
       - name: Subir APK instalable
         uses: actions/upload-artifact@v4
         with:
           name: CORE2_MINIMAL-apk
-          path: app/build/outputs/apk/debug/*.apk
+          path: CORE2_MINIMAL/app/build/outputs/apk/debug/*.apk
+
